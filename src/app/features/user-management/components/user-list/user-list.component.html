@@ -1,8 +1,9 @@
-<app-user-form></app-user-form>
+<div class="page-header">
+  <h2 class="page-title">Gestion des utilisateurs</h2>
+  <button class="btn-primary" (click)="onOpenAddForm()">+ Ajouter un utilisateur</button>
+</div>
 
 <div class="card">
-  <h2 class="page-title">Gestion des utilisateurs</h2>
-
   <table class="user-table">
     <thead>
       <tr>
@@ -16,9 +17,14 @@
     <tbody>
       @for (user of users(); track user.id) {
         <tr>
-          <td>{{ user.firstName }} {{ user.lastName }}</td>
+          <td>
+            <div class="user-cell">
+              <div class="avatar">{{ user.firstName[0] }}{{ user.lastName[0] }}</div>
+              <span>{{ user.firstName }} {{ user.lastName }}</span>
+            </div>
+          </td>
           <td>{{ user.email }}</td>
-          <td><span class="badge">{{ user.role }}</span></td>
+          <td><span class="badge" [class]="'badge-' + user.role">{{ user.role }}</span></td>
           <td>
             <span [class]="user.isActive ? 'status-active' : 'status-inactive'">
               {{ user.isActive ? 'Actif' : 'Inactif' }}
@@ -26,12 +32,20 @@
           </td>
           <td class="actions-cell">
             <button class="btn-secondary" (click)="onEdit(user)">Modifier</button>
-            <button class="btn-primary" (click)="onDelete(user.id)">Supprimer</button>
+            <button class="btn-danger" (click)="onDelete(user.id)">Supprimer</button>
           </td>
         </tr>
       }
     </tbody>
   </table>
 </div>
+
+@if (showAddForm()) {
+  <div class="modal-backdrop" (click)="onCloseAddForm()">
+    <div (click)="$event.stopPropagation()">
+      <app-user-form (userAdded)="onCloseAddForm()"></app-user-form>
+    </div>
+  </div>
+}
 
 <app-user-edit [user]="selectedUser" (close)="onCloseEdit()"></app-user-edit>

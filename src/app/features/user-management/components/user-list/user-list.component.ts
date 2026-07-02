@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../services/user.service';
 import { UserFormComponent } from '../user-form/user-form.component';
@@ -17,6 +17,7 @@ export class UserListComponent implements OnInit {
   users = this.userService.getUsers();
 
   selectedUser: User | null = null;
+  showAddForm = signal(false);
 
   ngOnInit() {
     this.userService.loadUsers();
@@ -32,5 +33,13 @@ export class UserListComponent implements OnInit {
 
   onCloseEdit() {
     this.selectedUser = null;
+  }
+
+  onOpenAddForm() {
+    this.showAddForm.set(true);
+  }
+
+  onCloseAddForm() {
+    this.showAddForm.set(false);
   }
 }

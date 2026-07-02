@@ -1,8 +1,13 @@
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .page-title {
   color: var(--coficab-primary);
-  border-bottom: 2px solid var(--coficab-primary);
-  padding-bottom: 12px;
-  margin-bottom: 20px;
+  margin: 0;
 }
 
 .user-table {
@@ -13,30 +18,82 @@
     background: var(--coficab-primary);
     color: var(--coficab-white);
     text-align: left;
-    padding: 12px;
+    padding: 14px 16px;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
   }
 
   td {
-    padding: 12px;
+    padding: 14px 16px;
     border-bottom: 1px solid var(--coficab-grey);
+    font-size: 0.95em;
   }
 
   tr:hover td {
     background: var(--coficab-grey-light);
   }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--coficab-primary);
+  color: var(--coficab-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8em;
+  flex-shrink: 0;
 }
 
 .badge {
-  background: var(--coficab-grey-light);
-  color: var(--coficab-primary);
-  padding: 4px 10px;
+  padding: 4px 12px;
   border-radius: 12px;
-  font-size: 0.85em;
+  font-size: 0.8em;
   font-weight: 600;
+  text-transform: capitalize;
 }
 
-.status-active { color: var(--coficab-success); font-weight: 600; }
-.status-inactive { color: var(--coficab-danger); font-weight: 600; }
+.badge-admin {
+  background: #fdecea;
+  color: var(--coficab-danger);
+}
+
+.badge-manager {
+  background: #fff4e5;
+  color: var(--coficab-warning);
+}
+
+.badge-user {
+  background: #e8f0fe;
+  color: var(--coficab-primary);
+}
+
+.status-active {
+  color: var(--coficab-success);
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.status-inactive {
+  color: var(--coficab-danger);
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
 .actions-cell {
   display: flex;
   gap: 8px;
@@ -47,11 +104,38 @@
   color: var(--coficab-black);
   border: 1px solid var(--coficab-grey);
   border-radius: var(--coficab-radius);
-  padding: 10px 20px;
+  padding: 8px 16px;
   cursor: pointer;
   font-weight: 600;
+  font-size: 0.9em;
 
   &:hover {
     background: var(--coficab-grey);
   }
+}
+
+.btn-danger {
+  background: var(--coficab-white);
+  color: var(--coficab-danger);
+  border: 1px solid var(--coficab-danger);
+  border-radius: var(--coficab-radius);
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9em;
+
+  &:hover {
+    background: var(--coficab-danger);
+    color: var(--coficab-white);
+  }
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 1, 104, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
