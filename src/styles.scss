@@ -1,5 +1,4 @@
-@import './styles/theme';
-
+@use './styles/theme';
 * {
   box-sizing: border-box;
   font-family: var(--coficab-font);
