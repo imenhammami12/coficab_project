@@ -27,3 +27,47 @@
 .app-content {
   padding: 24px 32px;
 }
+.app-header {
+  background: var(--coficab-primary);
+  color: var(--coficab-white);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+
+
+  nav {
+    flex: 1;
+    display: flex;
+    gap: 32px;
+  }
+
+  nav a {
+    color: var(--coficab-white);
+    text-decoration: none;
+    opacity: 0.8;
+    font-weight: 500;
+
+    &.active,
+    &:hover {
+      opacity: 1;
+      border-bottom: 2px solid var(--coficab-white);
+    }
+  }
+}
+
+.btn-logout {
+  background: transparent;
+  border: 1px solid var(--coficab-white);
+  color: var(--coficab-white);
+  padding: 8px 16px;
+  border-radius: var(--coficab-radius);
+  cursor: pointer;
+  font-weight: 600;
+
+  &:hover {
+    background: var(--coficab-white);
+    color: var(--coficab-primary);
+  }
+}
