@@ -1,0 +1,41 @@
+.user-form {
+  margin-bottom: 24px;
+  max-width: 500px;
+}
+
+.form-title {
+  color: var(--coficab-primary);
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+
+  label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--coficab-black);
+  }
+
+  input,
+  select {
+    padding: 10px;
+    border: 1px solid var(--coficab-grey);
+    border-radius: var(--coficab-radius);
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+      border-color: var(--coficab-primary);
+    }
+  }
+
+  .error {
+    color: var(--coficab-danger);
+    font-size: 0.85em;
+    margin-top: 4px;
+  }
+}

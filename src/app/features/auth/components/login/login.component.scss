@@ -1,0 +1,59 @@
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 380px;
+}
+
+.login-title {
+  color: var(--coficab-primary);
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+
+  label {
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  input {
+    padding: 10px;
+    border: 1px solid var(--coficab-grey);
+    border-radius: var(--coficab-radius);
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+      border-color: var(--coficab-primary);
+    }
+  }
+}
+
+.alert-error {
+  background: #fdecea;
+  color: var(--coficab-danger);
+  padding: 10px;
+  border-radius: var(--coficab-radius);
+  margin-bottom: 16px;
+  font-size: 0.9em;
+}
+
+button {
+  width: 100%;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

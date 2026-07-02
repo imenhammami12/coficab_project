@@ -1,0 +1,23 @@
+<div class="login-wrapper">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="card login-form">
+    <h2 class="login-title">Connexion</h2>
+
+    @if (errorMessage()) {
+      <div class="alert-error">{{ errorMessage() }}</div>
+    }
+
+    <div class="form-row">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" />
+    </div>
+
+    <div class="form-row">
+      <label for="password">Mot de passe</label>
+      <input id="password" type="password" formControlName="password" />
+    </div>
+
+    <button type="submit" class="btn-primary" [disabled]="isLoading()">
+      {{ isLoading() ? 'Connexion...' : 'Se connecter' }}
+    </button>
+  </form>
+</div>
