@@ -1,0 +1,40 @@
+<div class="chat-container card">
+  <h2 class="page-title">Assistant Coficab</h2>
+
+  <div class="chat-messages">
+    @if (chatbotService.messages().length === 0) {
+      <p class="chat-empty">Pose-moi une question sur Coficab (produits, services, entreprise...)</p>
+    }
+
+    @for (msg of chatbotService.messages(); track $index) {
+      <div class="chat-bubble" [class.user]="msg.role === 'user'" [class.bot]="msg.role === 'bot'">
+        <p>{{ msg.text }}</p>
+        @if (msg.sources && msg.sources.length > 0) {
+          <div class="chat-sources">
+            <span>Sources :</span>
+            @for (src of msg.sources; track src) {
+              <a [href]="src" target="_blank" rel="noopener">{{ src }}</a>
+            }
+          </div>
+        }
+      </div>
+    }
+
+    @if (chatbotService.isLoading()) {
+      <div class="chat-bubble bot loading">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+    }
+  </div>
+
+  <div class="chat-input-row">
+    <input
+      type="text"
+      placeholder="Écris ta question..."
+      [ngModel]="question()"
+      (ngModelChange)="question.set($event)"
+      (keyup.enter)="onSend()"
+    />
+    <button class="btn-primary" (click)="onSend()" [disabled]="chatbotService.isLoading()">Envoyer</button>
+  </div>
+</div>

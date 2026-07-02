@@ -22,5 +22,12 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/profile/components/my-profile/my-profile.component')
         .then(m => m.MyProfileComponent)
+  },
+  {
+    path: 'chatbot',
+    canActivate: [authGuard],
+    loadComponent: () =>
+      import('./features/chatbot/components/chat-window/chat-window.component')
+        .then(m => m.ChatWindowComponent)
   }
 ];
