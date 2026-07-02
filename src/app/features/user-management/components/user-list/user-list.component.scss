@@ -1,0 +1,39 @@
+.page-title {
+  color: var(--coficab-primary);
+  border-bottom: 2px solid var(--coficab-primary);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th {
+    background: var(--coficab-primary);
+    color: var(--coficab-white);
+    text-align: left;
+    padding: 12px;
+  }
+
+  td {
+    padding: 12px;
+    border-bottom: 1px solid var(--coficab-grey);
+  }
+
+  tr:hover td {
+    background: var(--coficab-grey-light);
+  }
+}
+
+.badge {
+  background: var(--coficab-grey-light);
+  color: var(--coficab-primary);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+.status-active { color: var(--coficab-success); font-weight: 600; }
+.status-inactive { color: var(--coficab-danger); font-weight: 600; }
