@@ -1,0 +1,34 @@
+<div class="card profile-card">
+  <h2 class="page-title">Mon profil</h2>
+
+  @if (successMessage()) {
+    <div class="alert-success">{{ successMessage() }}</div>
+  }
+  @if (errorMessage()) {
+    <div class="alert-error">{{ errorMessage() }}</div>
+  }
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <label for="firstName">Prénom</label>
+      <input id="firstName" type="text" formControlName="firstName" />
+    </div>
+
+    <div class="form-row">
+      <label for="lastName">Nom</label>
+      <input id="lastName" type="text" formControlName="lastName" />
+    </div>
+
+    <div class="form-row">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" />
+    </div>
+
+    <div class="form-row">
+      <label>Rôle</label>
+      <input type="text" [value]="currentUser()?.role" disabled />
+    </div>
+
+    <button type="submit" class="btn-primary">Enregistrer les modifications</button>
+  </form>
+</div>

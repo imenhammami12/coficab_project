@@ -1,0 +1,61 @@
+.profile-card {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.page-title {
+  color: var(--coficab-primary);
+  border-bottom: 2px solid var(--coficab-primary);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+
+  label {
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  input {
+    padding: 10px;
+    border: 1px solid var(--coficab-grey);
+    border-radius: var(--coficab-radius);
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+      border-color: var(--coficab-primary);
+    }
+
+    &:disabled {
+      background: var(--coficab-grey-light);
+      color: var(--coficab-grey-dark);
+    }
+  }
+}
+
+.alert-success {
+  background: #e8f5e9;
+  color: var(--coficab-success);
+  padding: 10px;
+  border-radius: var(--coficab-radius);
+  margin-bottom: 16px;
+  font-size: 0.9em;
+}
+
+.alert-error {
+  background: #fdecea;
+  color: var(--coficab-danger);
+  padding: 10px;
+  border-radius: var(--coficab-radius);
+  margin-bottom: 16px;
+  font-size: 0.9em;
+}
+
+button {
+  width: 100%;
+}

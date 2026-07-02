@@ -62,5 +62,13 @@ export class UserService {
       tap(() => this.loadUsers())
     );
   }
-  
+
+  updateMyProfile(changes: { firstName?: string; lastName?: string; email?: string }) {
+    const payload: any = {};
+    if (changes.firstName !== undefined) payload.first_name = changes.firstName;
+    if (changes.lastName !== undefined) payload.last_name = changes.lastName;
+    if (changes.email !== undefined) payload.email = changes.email;
+
+    return this.http.put(`${API_URL}/me`, payload);
+  }
 }

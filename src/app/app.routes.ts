@@ -9,12 +9,18 @@ export const routes: Routes = [
       import('./features/auth/components/login/login.component')
         .then(m => m.LoginComponent)
   },
-{
-  path: 'users',
-  canActivate: [adminGuard],
-  loadComponent: () =>
-    import('./features/user-management/components/user-list/user-list.component')
-      .then(m => m.UserListComponent)
-}
-
+  {
+    path: 'users',
+    canActivate: [adminGuard],
+    loadComponent: () =>
+      import('./features/user-management/components/user-list/user-list.component')
+        .then(m => m.UserListComponent)
+  },
+  {
+    path: 'profile',
+    canActivate: [authGuard],
+    loadComponent: () =>
+      import('./features/profile/components/my-profile/my-profile.component')
+        .then(m => m.MyProfileComponent)
+  }
 ];
