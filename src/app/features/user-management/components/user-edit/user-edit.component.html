@@ -1,0 +1,47 @@
+@if (user) {
+  <div class="modal-backdrop" (click)="onCancel()">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="card modal-form" (click)="$event.stopPropagation()">
+      <h3 class="form-title">Modifier {{ user.firstName }} {{ user.lastName }}</h3>
+
+      @if (errorMessage) {
+        <div class="alert-error">{{ errorMessage }}</div>
+      }
+
+      <div class="form-row">
+        <label for="edit-firstName">Prénom</label>
+        <input id="edit-firstName" type="text" formControlName="firstName" />
+      </div>
+
+      <div class="form-row">
+        <label for="edit-lastName">Nom</label>
+        <input id="edit-lastName" type="text" formControlName="lastName" />
+      </div>
+
+      <div class="form-row">
+        <label for="edit-email">Email</label>
+        <input id="edit-email" type="email" formControlName="email" />
+      </div>
+
+      <div class="form-row">
+        <label for="edit-role">Rôle</label>
+        <select id="edit-role" formControlName="role">
+          <option value="user">Utilisateur</option>
+          <option value="manager">Manager</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+
+      <div class="form-row form-row-checkbox">
+        <label>
+          <input type="checkbox" formControlName="isActive" />
+          Compte actif
+        </label>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-secondary" (click)="onCancel()">Annuler</button>
+        <button type="submit" class="btn-primary">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+}

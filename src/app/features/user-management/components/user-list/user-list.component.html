@@ -24,7 +24,8 @@
               {{ user.isActive ? 'Actif' : 'Inactif' }}
             </span>
           </td>
-          <td>
+          <td class="actions-cell">
+            <button class="btn-secondary" (click)="onEdit(user)">Modifier</button>
             <button class="btn-primary" (click)="onDelete(user.id)">Supprimer</button>
           </td>
         </tr>
@@ -32,3 +33,5 @@
     </tbody>
   </table>
 </div>
+
+<app-user-edit [user]="selectedUser" (close)="onCloseEdit()"></app-user-edit>

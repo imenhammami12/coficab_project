@@ -37,3 +37,21 @@
 
 .status-active { color: var(--coficab-success); font-weight: 600; }
 .status-inactive { color: var(--coficab-danger); font-weight: 600; }
+.actions-cell {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-secondary {
+  background: var(--coficab-grey-light);
+  color: var(--coficab-black);
+  border: 1px solid var(--coficab-grey);
+  border-radius: var(--coficab-radius);
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+
+  &:hover {
+    background: var(--coficab-grey);
+  }
+}
