@@ -1,0 +1,27 @@
+// src/styles/_theme.scss
+
+:root {
+  // Couleur principale de la marque (extraite du site coficab.com)
+  --coficab-primary: #000168;
+  --coficab-primary-light: #1a1c8a;
+  --coficab-primary-dark: #00013f;
+
+  // Neutres
+  --coficab-white: #ffffff;
+  --coficab-grey-light: #f5f6f8;
+  --coficab-grey: #e0e2e7;
+  --coficab-grey-dark: #6b6f76;
+  --coficab-black: #1a1a1a;
+
+  // États
+  --coficab-success: #2e7d32;
+  --coficab-warning: #ed6c02;
+  --coficab-danger: #d32f2f;
+
+  // Typo
+  --coficab-font: 'Helvetica Neue', Arial, sans-serif;
+
+  // Radius / ombres
+  --coficab-radius: 6px;
+  --coficab-shadow: 0 2px 8px rgba(0, 1, 104, 0.08);
+}
