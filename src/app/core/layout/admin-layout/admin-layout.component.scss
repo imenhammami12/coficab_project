@@ -58,9 +58,9 @@
 }
 
 .nav-icon {
-  font-size: 1.1em;
   width: 20px;
-  text-align: center;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 .sidebar-logout {
