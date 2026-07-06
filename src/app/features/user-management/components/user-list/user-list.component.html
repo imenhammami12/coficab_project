@@ -19,14 +19,14 @@
         <tr>
           <td>
             <div class="user-cell">
-              <div class="avatar">{{ user.firstName[0] }}{{ user.lastName[0] }}</div>
-              <span>{{ user.firstName }} {{ user.lastName }}</span>
+              <div class="avatar" [class]="'avatar-' + user.role">{{ user.firstName[0] }}{{ user.lastName[0] }}</div>
+              <span class="user-name">{{ user.firstName }} {{ user.lastName }}</span>
             </div>
           </td>
           <td>{{ user.email }}</td>
           <td><span class="badge" [class]="'badge-' + user.role">{{ user.role }}</span></td>
           <td>
-            <span [class]="user.isActive ? 'status-active' : 'status-inactive'">
+            <span class="status-dot" [class]="user.isActive ? 'status-active' : 'status-inactive'">
               {{ user.isActive ? 'Actif' : 'Inactif' }}
             </span>
           </td>

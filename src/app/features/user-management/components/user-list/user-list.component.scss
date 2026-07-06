@@ -2,12 +2,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .page-title {
-  color: var(--coficab-primary);
+  color: var(--coficab-black);
   margin: 0;
+  font-size: 1.5em;
+}
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  padding: 0;
 }
 
 .user-table {
@@ -15,23 +23,25 @@
   border-collapse: collapse;
 
   th {
-    background: var(--coficab-primary);
-    color: var(--coficab-white);
+    background: var(--coficab-grey-light);
+    color: var(--coficab-grey-dark);
     text-align: left;
-    padding: 14px 16px;
-    font-size: 0.85em;
+    padding: 14px 20px;
+    font-size: 0.75em;
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    border-bottom: 1px solid var(--coficab-grey);
   }
 
   td {
-    padding: 14px 16px;
-    border-bottom: 1px solid var(--coficab-grey);
+    padding: 16px 20px;
+    border-bottom: 1px solid #f0f1f4;
     font-size: 0.95em;
   }
 
   tr:hover td {
-    background: var(--coficab-grey-light);
+    background: #fafbfc;
   }
 
   tr:last-child td {
@@ -46,52 +56,74 @@
 }
 
 .avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--coficab-primary);
-  color: var(--coficab-white);
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
   font-size: 0.8em;
   flex-shrink: 0;
+  color: var(--coficab-white);
+}
+
+.avatar-admin { background: linear-gradient(135deg, #6366f1, #4338ca); }
+.avatar-manager { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.avatar-user { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+
+.user-name {
+  font-weight: 600;
+  color: var(--coficab-black);
 }
 
 .badge {
-  padding: 4px 12px;
-  border-radius: 12px;
-  font-size: 0.8em;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.78em;
   font-weight: 600;
   text-transform: capitalize;
+  display: inline-block;
 }
 
 .badge-admin {
-  background: #fdecea;
-  color: var(--coficab-danger);
+  background: #eef2ff;
+  color: #4338ca;
 }
 
 .badge-manager {
-  background: #fff4e5;
-  color: var(--coficab-warning);
+  background: #fffbeb;
+  color: #d97706;
 }
 
 .badge-user {
-  background: #e8f0fe;
-  color: var(--coficab-primary);
+  background: #ecfeff;
+  color: #0891b2;
+}
+
+.status-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.9em;
+
+  &::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+  }
 }
 
 .status-active {
   color: var(--coficab-success);
-  font-weight: 600;
-  font-size: 0.9em;
+  &::before { background: var(--coficab-success); }
 }
 
 .status-inactive {
-  color: var(--coficab-danger);
-  font-weight: 600;
-  font-size: 0.9em;
+  color: var(--coficab-grey-dark);
+  &::before { background: var(--coficab-grey-dark); }
 }
 
 .actions-cell {
@@ -100,33 +132,37 @@
 }
 
 .btn-secondary {
-  background: var(--coficab-grey-light);
+  background: var(--coficab-white);
   color: var(--coficab-black);
   border: 1px solid var(--coficab-grey);
-  border-radius: var(--coficab-radius);
-  padding: 8px 16px;
+  border-radius: 8px;
+  padding: 7px 14px;
   cursor: pointer;
   font-weight: 600;
-  font-size: 0.9em;
+  font-size: 0.85em;
+  transition: all 0.15s ease;
 
   &:hover {
-    background: var(--coficab-grey);
+    background: var(--coficab-grey-light);
+    border-color: var(--coficab-grey-dark);
   }
 }
 
 .btn-danger {
   background: var(--coficab-white);
-  color: var(--coficab-danger);
-  border: 1px solid var(--coficab-danger);
-  border-radius: var(--coficab-radius);
-  padding: 8px 16px;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 7px 14px;
   cursor: pointer;
   font-weight: 600;
-  font-size: 0.9em;
+  font-size: 0.85em;
+  transition: all 0.15s ease;
 
   &:hover {
-    background: var(--coficab-danger);
+    background: #dc2626;
     color: var(--coficab-white);
+    border-color: #dc2626;
   }
 }
 
@@ -134,6 +170,7 @@
   position: fixed;
   inset: 0;
   background: rgba(0, 1, 104, 0.4);
+  backdrop-filter: blur(2px);
   display: flex;
   align-items: center;
   justify-content: center;
