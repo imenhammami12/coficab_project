@@ -34,15 +34,15 @@ export class LoginComponent {
 
     const { email, password } = this.form.getRawValue();
 
-    this.authService.login({ email: email!, password: password! }).subscribe({
-      next: (res) => {
-        this.isLoading.set(false);
-        if (res.user.role === 'admin') {
-          this.router.navigate(['/users']);
-        } else {
-          this.router.navigate(['/dashboard']);
-        }
-      },
+this.authService.login({ email: email!, password: password! }).subscribe({
+  next: (res) => {
+    this.isLoading.set(false);
+    if (res.user.role === 'admin') {
+      this.router.navigate(['/users']);
+    } else {
+      this.router.navigate(['/chatbot']);
+    }
+  },
       error: (err) => {
         this.isLoading.set(false);
         this.errorMessage.set(err.error?.detail ?? 'Erreur de connexion');
