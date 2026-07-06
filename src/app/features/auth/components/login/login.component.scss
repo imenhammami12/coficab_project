@@ -2,12 +2,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
+  min-height: 100vh;
+  position: relative;
+  background-image:
+    linear-gradient(rgba(0, 1, 104, 0.75), rgba(0, 1, 104, 0.85)),
+    url('/background.jpeg');
+  background-size: cover;
+  background-position: center;
 }
 
 .login-form {
   width: 100%;
   max-width: 380px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .login-title {
