@@ -1,61 +1,103 @@
 .profile-card {
-  max-width: 480px;
+  max-width: 520px;
   margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  padding: 32px;
 }
 
 .page-title {
-  color: var(--coficab-primary);
-  border-bottom: 2px solid var(--coficab-primary);
-  padding-bottom: 12px;
-  margin-bottom: 20px;
+  color: var(--coficab-black);
+  font-size: 1.4em;
+  margin: 0 0 24px 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .form-row {
   display: flex;
   flex-direction: column;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 
   label {
     font-weight: 600;
+    font-size: 0.85em;
+    color: var(--coficab-grey-dark);
     margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
   }
 
   input {
-    padding: 10px;
+    padding: 11px 14px;
     border: 1px solid var(--coficab-grey);
-    border-radius: var(--coficab-radius);
+    border-radius: 8px;
     font-size: 14px;
+    transition: border-color 0.15s ease;
 
     &:focus {
       outline: none;
       border-color: var(--coficab-primary);
+      box-shadow: 0 0 0 3px rgba(0, 1, 104, 0.08);
     }
 
     &:disabled {
       background: var(--coficab-grey-light);
       color: var(--coficab-grey-dark);
+      text-transform: capitalize;
     }
   }
 }
 
 .alert-success {
-  background: #e8f5e9;
-  color: var(--coficab-success);
-  padding: 10px;
-  border-radius: var(--coficab-radius);
-  margin-bottom: 16px;
+  background: #ecfdf5;
+  color: #059669;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
   font-size: 0.9em;
+  font-weight: 500;
 }
 
 .alert-error {
-  background: #fdecea;
-  color: var(--coficab-danger);
-  padding: 10px;
-  border-radius: var(--coficab-radius);
-  margin-bottom: 16px;
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
   font-size: 0.9em;
+  font-weight: 500;
 }
 
 button {
   width: 100%;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 8px;
+}
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.profile-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--coficab-primary), var(--coficab-primary-light));
+  color: var(--coficab-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1em;
+  flex-shrink: 0;
+}
+
+.profile-subtitle {
+  margin: 4px 0 0 0;
+  color: var(--coficab-grey-dark);
+  font-size: 0.9em;
 }

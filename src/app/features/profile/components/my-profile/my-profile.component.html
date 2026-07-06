@@ -1,5 +1,11 @@
 <div class="card profile-card">
-  <h2 class="page-title">Mon profil</h2>
+  <div class="profile-header">
+    <div class="profile-avatar">{{ currentUser()?.firstName?.[0] }}{{ currentUser()?.lastName?.[0] }}</div>
+    <div>
+      <h2 class="page-title">Mon profil</h2>
+      <p class="profile-subtitle">Gère tes informations personnelles</p>
+    </div>
+  </div>
 
   @if (successMessage()) {
     <div class="alert-success">{{ successMessage() }}</div>
